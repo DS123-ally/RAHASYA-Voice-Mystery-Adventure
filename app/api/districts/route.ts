@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { listDistricts } from "@/lib/game/load-district";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {

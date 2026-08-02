@@ -1,6 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
-import type { District } from "@/lib/game/districts";
-import type { DistrictTaskPack, StreetTask } from "@/lib/game/tasks";
+import { SEED_DISTRICTS, type District } from "@/lib/game/districts";
+import { SEED_TASK_PACKS, type DistrictTaskPack, type StreetTask } from "@/lib/game/tasks";
 
 export type LoadedDistrict = {
   id: string;
@@ -34,11 +34,21 @@ export type DistrictListItem = {
 
 function rowToLoaded(row: DistrictRow): LoadedDistrict {
   const taskPack = row.task_pack;
+  
+  // Patch tasks if DB is missing prompts (legacy interruption format)
+  const localPack = SEED_TASK_PACKS.find(p => p.districtId === row.id);
+  const tasks = (taskPack.tasks ?? []).map(task => {
+    if (!localPack) return task;
+    const localTask = localPack.tasks.find(t => t.id === task.id);
+    if (!localTask) return task;
+    return { ...task, lessons: localTask.lessons };
+  });
+
   return {
     id: row.id,
     district: row.district,
-    taskPack,
-    tasks: taskPack.tasks ?? [],
+    taskPack: { ...taskPack, tasks },
+    tasks,
   };
 }
 
@@ -65,11 +75,23 @@ export async function loadDistrictById(
     console.error("loadDistrictById", id, error);
     throw new Error("Failed to load district.");
   }
-  if (!data) {
-    return null;
+  
+  let row = data as DistrictRow | null;
+  if (!row) {
+    const localDistrict = SEED_DISTRICTS.find(d => d.id === id);
+    const localPack = SEED_TASK_PACKS.find(p => p.districtId === id);
+    if (localDistrict && localPack) {
+      row = {
+        id,
+        district: localDistrict,
+        task_pack: localPack
+      };
+    } else {
+      return null;
+    }
   }
 
-  const loaded = rowToLoaded(data as DistrictRow);
+  const loaded = rowToLoaded(row);
   cache.set(id, { at: Date.now(), value: loaded });
   return loaded;
 }
@@ -89,10 +111,29 @@ export async function listDistricts(): Promise<DistrictListItem[]> {
     console.error("listDistricts", error);
     throw new Error("Failed to list districts.");
   }
+  
+  const mergedRows = new Map<string, DistrictRow>();
+  for (const row of data ?? []) {
+    mergedRows.set(row.id, row as DistrictRow);
+  }
+  
+  // Merge un-pushed local seeds
+  for (const sd of SEED_DISTRICTS) {
+    if (!mergedRows.has(sd.id)) {
+      const sp = SEED_TASK_PACKS.find(p => p.districtId === sd.id);
+      if (sp) {
+        mergedRows.set(sd.id, {
+          id: sd.id,
+          district: sd,
+          task_pack: sp
+        });
+      }
+    }
+  }
 
-  const items = (data ?? []).map((row) => {
-    const district = (row as DistrictRow).district;
-    const pack = (row as DistrictRow).task_pack;
+  const items = Array.from(mergedRows.values()).map((row) => {
+    const district = row.district;
+    const pack = row.task_pack;
     return {
       id: row.id,
       name: district.name,
@@ -105,10 +146,13 @@ export async function listDistricts(): Promise<DistrictListItem[]> {
       taskCount: pack.tasks?.length ?? 0,
     };
   });
+  
+  // Sort by id for consistency
+  items.sort((a, b) => a.id.localeCompare(b.id));
 
   listCache = { at: Date.now(), value: items };
-  for (const row of data ?? []) {
-    const loaded = rowToLoaded(row as DistrictRow);
+  for (const row of mergedRows.values()) {
+    const loaded = rowToLoaded(row);
     cache.set(loaded.id, { at: Date.now(), value: loaded });
   }
 

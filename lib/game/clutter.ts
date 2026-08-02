@@ -293,6 +293,10 @@ function districtWeights(landmark: Theme["landmark"]): Weights {
       return { ...base, cart: 1.6, drum: 1.5, sackBundle: 1.7, signboard: 1.6, gasCylinder: 1.4 };
     case "bhubaneswar":
       return { ...base, bananaClump: 1.7, weed: 1.6, pottedPlant: 1.6, groundPatch: 1.3, bicycle: 1.5 };
+    case "pune":
+      return { ...base, scooter: 2.0, pole: 1.4, wire: 1.5, drum: 1.3, bicycle: 1.5, pottedPlant: 1.4 };
+    default:
+      return base;
   }
 }
 

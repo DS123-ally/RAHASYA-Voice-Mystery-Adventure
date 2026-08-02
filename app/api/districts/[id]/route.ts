@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { loadDistrictById } from "@/lib/game/load-district";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 type Params = { params: Promise<{ id: string }> };
 

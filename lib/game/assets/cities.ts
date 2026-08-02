@@ -508,3 +508,45 @@ export function makeKalingaDeul(mats?: AssetMaterialLib, seed = 16): THREE.Group
   g.name = "bhubaneswar-kalinga-deul";
   return g;
 }
+
+export function makeShaniwarWada(mats?: AssetMaterialLib, seed = 17): THREE.Group {
+  const parts: Part[] = [];
+  const stone = mats?.standard?.(0xb99a73) ?? stdMat(0xb99a73); // Deccan basalt / brown stone
+  const wood = mats?.standard?.(0x6b4c3a) ?? stdMat(0x6b4c3a);
+  const dark = mats?.standard?.(0x3a2c22) ?? stdMat(0x3a2c22);
+
+  // Left and Right bastions
+  parts.push({ geo: bakedCyl(2.5, 2.8, 8, 12, -4, 4, 1), mat: stone });
+  parts.push({ geo: bakedCyl(2.5, 2.8, 8, 12, 4, 4, 1), mat: stone });
+
+  // Main wall between bastions
+  parts.push({ geo: bakedBox(6, 6, 2, 0, 3, 1), mat: stone });
+
+  // Wooden gate with arch
+  parts.push({ geo: bakedBox(2.8, 4, 0.4, 0, 2, 2.1), mat: wood });
+  parts.push({ geo: bakedCyl(1.4, 1.4, 0.4, 16, 0, 4, 2.1, 0, Math.PI / 2), mat: wood });
+  
+  // Arch cutout (darkness)
+  parts.push({ geo: bakedBox(2.6, 3.9, 0.2, 0, 1.95, 2.25), mat: dark });
+  parts.push({ geo: bakedCyl(1.3, 1.3, 0.2, 16, 0, 3.9, 2.25, 0, Math.PI / 2), mat: dark });
+
+  // Spikes on the gate
+  for (let i = 0; i < 5; i++) {
+    for (let j = 0; j < 3; j++) {
+      parts.push({ geo: bakedCone(0.1, 0.3, 4, -0.9 + i * 0.45, 1.5 + j * 0.8, 2.4, Math.PI/2), mat: dark });
+    }
+  }
+
+  // Top gallery (Nagarkhana)
+  parts.push({ geo: bakedBox(7, 1.5, 3, 0, 6.75, 1), mat: wood });
+  parts.push({ geo: bakedBox(7.2, 0.2, 3.2, 0, 7.6, 1), mat: stone });
+  
+  // Pillars for the gallery
+  for (let i = -3; i <= 3; i += 1.5) {
+    parts.push({ geo: bakedBox(0.2, 1.5, 0.2, i, 6.75, 2.4), mat: wood });
+  }
+
+  const g = mergeByMaterial(parts);
+  g.name = "pune-shaniwar-wada";
+  return g;
+}

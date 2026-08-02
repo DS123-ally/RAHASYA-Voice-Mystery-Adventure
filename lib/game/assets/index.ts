@@ -47,6 +47,7 @@ import {
   makePolHouse,
   makeGurdwara,
   makeKalingaDeul,
+  makeShaniwarWada,
 } from "./cities";
 
 /**
@@ -66,7 +67,8 @@ export type Landmark =
   | "mumbai"
   | "ahmedabad"
   | "amritsar"
-  | "bhubaneswar";
+  | "bhubaneswar"
+  | "pune";
 
 export type DistrictKit = {
   hero: Array<() => THREE.Group>;
@@ -182,6 +184,13 @@ export function getDistrictKit(landmark: Landmark, mats?: MaterialLibrary): Dist
         vehicles: [() => makeAmbassadorTaxi(al, nextSeed())],
         streetProps: [() => makeScaffolding(al, nextSeed()), () => makeTiffinCart(al, nextSeed())],
       };
+      
+    case "pune":
+      return {
+        hero: [() => makeShaniwarWada(al, nextSeed()), () => makeMetroPillar(al, nextSeed())],
+        vehicles: [() => makeDeliveryBike(al, nextSeed())],
+        streetProps: [() => makeScaffolding(al, nextSeed()), () => makeTiffinCart(al, nextSeed())],
+      };
 
     case "ahmedabad":
       return {
@@ -222,6 +231,7 @@ export {
   makePolHouse,
   makeGurdwara,
   makeKalingaDeul,
+  makeShaniwarWada,
 } from "./cities";
 export {
   makeTechParkSlab,
