@@ -15,6 +15,10 @@ export type StreetTask = {
   kind: TaskKind;
   /** Offset from the chowk centre, same as NPC positions. */
   pos: [number, number];
+  /** Optional set of waypoints for the NPC to walk between. */
+  waypoints?: [number, number][];
+  /** Walking speed if waypoints are defined. Default is 2.0 */
+  speed?: number;
   title: string;
   brief: string;
   reward: number;

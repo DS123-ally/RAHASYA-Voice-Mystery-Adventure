@@ -939,10 +939,6 @@ export const deccanPune: District = {
     exposure: 1.1,
     landmark: "pune",
   },
-  audio: {
-    music: "sadak_bgm_1",
-    ambience: "sadak_ambience_1",
-  },
   clutter: "pune",
   phrases: deccanPunePhrases,
   npcs: [

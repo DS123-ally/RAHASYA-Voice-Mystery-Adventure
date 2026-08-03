@@ -353,6 +353,7 @@ export class Game {
   private clutter: Clutter | null = null;
   private taskAnchors = new Map<string, THREE.Group>();
   private hostMeshes = new Map<string, THREE.Group>();
+  private hostWaypoint = new Map<string, number>();
   private markers = new Map<string, THREE.Group>();
   private tasks: StreetTask[] = [];
 
@@ -497,6 +498,10 @@ export class Game {
       host.position.set(0, 0.26, 0);
       anchor.add(host);
       this.hostMeshes.set(task.id, host);
+
+      if (task.waypoints && task.waypoints.length > 0) {
+        this.hostWaypoint.set(task.id, 0);
+      }
 
       if (task.kind === "auto") {
         const auto = makeAuto(theme.autoCanopy);
@@ -941,17 +946,61 @@ export class Game {
     // and breathe the rest of the time. Without the idle driver the whole
     // street population stands frozen from spawn to exit.
     let phaseOffset = 0;
-    for (const [id, mesh] of this.hostMeshes) {
+    for (const task of this.tasks) {
+      const id = task.id;
+      const mesh = this.hostMeshes.get(id);
+      if (!mesh) continue;
       const anchor = this.taskAnchors.get(id)!;
-      const wx = anchor.position.x;
-      const wz = anchor.position.z;
+      const wx = anchor.position.x + mesh.position.x;
+      const wz = anchor.position.z + mesh.position.z;
       const d = Math.hypot(this.playerPos.x - wx, this.playerPos.z - wz);
+      
+      let isWalking = false;
+
       if (d < TALK_RADIUS * 2.2) {
+        // Stop and look at player
         const target = Math.atan2(this.playerPos.x - wx, this.playerPos.z - wz);
         mesh.rotation.y = dampAngle(mesh.rotation.y, target, 7, dt);
+      } else if (task.waypoints && task.waypoints.length > 0) {
+        // Waypoint navigation
+        let wpIdx = this.hostWaypoint.get(id) ?? 0;
+        const targetWp = task.waypoints[wpIdx];
+        // Target is relative to anchor
+        const localTargetX = targetWp[0] - task.pos[0];
+        const localTargetZ = targetWp[1] - task.pos[1];
+        
+        const dx = localTargetX - mesh.position.x;
+        const dz = localTargetZ - mesh.position.z;
+        const distToWp = Math.hypot(dx, dz);
+        
+        if (distToWp < 0.2) {
+          // Reached waypoint, advance to next
+          wpIdx = (wpIdx + 1) % task.waypoints.length;
+          this.hostWaypoint.set(id, wpIdx);
+        } else {
+          // Move towards waypoint
+          const speed = task.speed ?? 1.5;
+          const moveDist = Math.min(speed * dt, distToWp);
+          const dirX = dx / distToWp;
+          const dirZ = dz / distToWp;
+          
+          mesh.position.x += dirX * moveDist;
+          mesh.position.z += dirZ * moveDist;
+          
+          // Face the movement direction
+          const targetRot = Math.atan2(dirX, dirZ);
+          mesh.rotation.y = dampAngle(mesh.rotation.y, targetRot, 10, dt);
+          isWalking = true;
+        }
       }
-      // Stagger the phase so a row of NPCs doesn't breathe in unison.
-      setIdlePhase(mesh, t + phaseOffset);
+
+      if (isWalking) {
+        // Walk animation
+        setWalkPhase(mesh, t + phaseOffset, 1.2, 0, t);
+      } else {
+        // Stagger the phase so a row of NPCs doesn't breathe in unison.
+        setIdlePhase(mesh, t + phaseOffset);
+      }
       phaseOffset += 1.7;
     }
 
