@@ -939,7 +939,6 @@ export const deccanPune: District = {
     exposure: 1.1,
     landmark: "pune",
   },
-  clutter: "pune",
   phrases: deccanPunePhrases,
   npcs: [
     {
@@ -1012,25 +1011,6 @@ export const deccanPune: District = {
         reward: 30,
       },
       clue: "Ticket bought.",
-      lesson: phrasebookLesson(deccanPunePhrases),
-    },
-  ],
-  tasks: [
-    {
-      id: "pune-phrasebook",
-      districtId: "deccan-pune",
-      kind: "task",
-      pos: [0, 0],
-      title: "Phrasebook",
-      brief: "Learn some basic Marathi.",
-      reward: 10,
-      interactLabel: "Review Phrases",
-      name: "Guide",
-      role: "System",
-      speaker: "arvind",
-      colour: 0x5a4a40,
-      completionNote: "Basic Marathi learned.",
-      requiresClues: 0,
       lesson: phrasebookLesson(deccanPunePhrases),
     },
   ],
