@@ -10,6 +10,7 @@ import dadarChowk from "../../public/covers/dadar-chowk.jpg";
 import manekChowk from "../../public/covers/manek-chowk.jpg";
 import hallBazaar from "../../public/covers/hall-bazaar.jpg";
 import lingarajLane from "../../public/covers/lingaraj-lane.jpg";
+import deccanPune from "../../public/covers/deccan-pune.jpg";
 
 /** Bundled cover art so every district card loads reliably in dev and prod. */
 export const DISTRICT_COVER_IMAGES: Record<string, StaticImageData> = {
@@ -23,4 +24,5 @@ export const DISTRICT_COVER_IMAGES: Record<string, StaticImageData> = {
   "manek-chowk": manekChowk,
   "hall-bazaar": hallBazaar,
   "lingaraj-lane": lingarajLane,
+  "deccan-pune": deccanPune,
 };
