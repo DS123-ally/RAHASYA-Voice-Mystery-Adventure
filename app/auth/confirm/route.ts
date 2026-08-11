@@ -13,6 +13,8 @@ export async function GET(request: NextRequest) {
     const { error } = await supabase.auth.verifyOtp({ type, token_hash });
     if (!error) {
       return NextResponse.redirect(`${origin}${next}`);
+    } else {
+      console.error("Auth confirm error (verifyOtp):", error);
     }
   }
 
