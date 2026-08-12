@@ -66,7 +66,9 @@ export function useVoiceTurn(opts: UseVoiceTurnOptions): UseVoiceTurnResult {
   const intentionalCloseRef = useRef(false);
   const everConnectedRef = useRef(false);
   const optsRef = useRef(opts);
-  optsRef.current = opts;
+  useEffect(() => {
+    optsRef.current = opts;
+  }, [opts]);
 
   const setStatus = useCallback((s: VoiceStatus) => {
     statusRef.current = s;
@@ -107,6 +109,8 @@ export function useVoiceTurn(opts: UseVoiceTurnOptions): UseVoiceTurnResult {
       reconnectTimerRef.current = null;
     }
   }, []);
+
+  const openSocketRef = useRef<(() => void) | null>(null);
 
   const openSocket = useCallback(() => {
     clearReconnectTimer();
@@ -244,10 +248,14 @@ export function useVoiceTurn(opts: UseVoiceTurnOptions): UseVoiceTurnResult {
       const attempt = reconnectAttemptRef.current++;
       const delay = Math.min(BASE_BACKOFF_MS * 2 ** attempt, MAX_BACKOFF_MS);
       reconnectTimerRef.current = setTimeout(() => {
-        openSocket();
+        openSocketRef.current?.();
       }, delay);
     };
   }, [clearReconnectTimer, ensurePlayer, send, setStatus, teardownMic]);
+
+  useEffect(() => {
+    openSocketRef.current = openSocket;
+  }, [openSocket]);
 
   const connect = useCallback(() => {
     if (
