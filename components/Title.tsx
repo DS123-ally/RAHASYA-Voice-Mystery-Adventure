@@ -19,6 +19,7 @@ import { cn } from "@/lib/utils";
 import { getAudioContext } from "@/lib/audio/engine";
 import { playSfx } from "@/lib/audio/sfx";
 import SignOutButton from "@/components/auth/SignOutButton";
+import LeaderboardStats from "@/components/LeaderboardStats";
 
 type DistrictSummary = {
   id: string;
@@ -205,7 +206,8 @@ export default function Title({
             </span>
             <span className="text-lg font-heading tracking-tight">Rahasya</span>
           </span>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
+            <LeaderboardStats />
             <SignOutButton tone="subtle" />
           </div>
         </div>
