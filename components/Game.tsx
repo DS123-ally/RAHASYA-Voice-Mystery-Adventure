@@ -103,6 +103,7 @@ export default function GameShell() {
   const talkingRef = useRef<StreetTask | null>(null);
   const menuRef = useRef(false);
   const metRef = useRef<Set<string>>(new Set());
+  const initialCompletedRef = useRef<Set<string>>(new Set());
   const progressRef = useRef({
     districtId: "",
     comfort: "medium" as ComfortLevel,
@@ -188,7 +189,9 @@ export default function GameShell() {
         setBaseLang(pickedBaseLang);
         setCash(saved.cash);
         setXp(saved.xp);
-        setCompleted(new Set(saved.completedTaskIds));
+        const compSet = new Set(saved.completedTaskIds);
+        setCompleted(compSet);
+        initialCompletedRef.current = compSet;
         setArtifacts([]);
         setNpcMemory({});
         metRef.current = new Set();
@@ -281,7 +284,7 @@ export default function GameShell() {
   useEffect(() => {
     if (!district || !canvasRef.current) return;
 
-    const game = new Game(canvasRef.current, district, tasks, (t) => {
+    const game = new Game(canvasRef.current, district, tasks, initialCompletedRef.current, (t) => {
       nearbyRef.current = t.nearby;
       setTel(t);
     });

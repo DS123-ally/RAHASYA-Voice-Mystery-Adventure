@@ -388,12 +388,16 @@ export class Game {
     canvas: HTMLCanvasElement,
     district: District,
     tasks: StreetTask[],
+    initialCompleted: Set<string>,
     onTelemetry: (t: Telemetry) => void
   ) {
     this.canvas = canvas;
     this.district = district;
     this.onTelemetry = onTelemetry;
     this.tasks = tasks;
+    this.done = new Set(initialCompleted);
+
+    this.resetPlayerToStart();
 
     const theme = district.theme;
 
@@ -420,6 +424,21 @@ export class Game {
     this.buildWorld();
     this.buildPlayer();
     this.bindInput();
+  }
+
+  private resetPlayerToStart() {
+    const firstUncompleted = this.tasks.find((t) => !this.done.has(t.id));
+    if (firstUncompleted) {
+      const x = CHOWK.x + firstUncompleted.pos[0];
+      const z = CHOWK.z + firstUncompleted.pos[1];
+      this.playerPos.set(x, 0, z + 5);
+      this.yaw = 0;
+      this.facing = 0;
+    } else {
+      this.playerPos.set(SPAWN.x, 0, SPAWN.z);
+      this.yaw = 0;
+      this.facing = 0;
+    }
   }
 
   /* ---------------- setup ---------------- */
@@ -1393,10 +1412,8 @@ export class Game {
 
   /** Snap back to the chowk spawn pose (position, facing, camera). */
   public recenter() {
-    this.playerPos.set(SPAWN.x, 0, SPAWN.z);
+    this.resetPlayerToStart();
     this.velocity.set(0, 0, 0);
-    this.yaw = 0;
-    this.facing = 0;
     this.pitch = 0.16;
     this.pendingYaw = 0;
     this.pendingPitch = 0;
@@ -1410,25 +1427,25 @@ export class Game {
     this.lean = 0;
     this.setVirtualMove(0, 0);
 
-    this.player.position.set(SPAWN.x, PLAYER_BASE_Y, SPAWN.z);
+    this.player.position.set(this.playerPos.x, PLAYER_BASE_Y, this.playerPos.z);
     this.player.rotation.y = 0;
 
     const dist = 9;
     const shoulder = 0.9;
     const height = 2.8 + this.pitch * 5;
     this.camera.position.set(
-      SPAWN.x - Math.sin(0) * dist + -Math.cos(0) * shoulder,
+      this.playerPos.x - Math.sin(0) * dist + -Math.cos(0) * shoulder,
       height,
-      SPAWN.z - Math.cos(0) * dist + Math.sin(0) * shoulder
+      this.playerPos.z - Math.cos(0) * dist + Math.sin(0) * shoulder
     );
-    this.lookTarget.set(SPAWN.x, PLAYER_LOOK_H, SPAWN.z);
+    this.lookTarget.set(this.playerPos.x, PLAYER_LOOK_H, this.playerPos.z);
     this.camera.lookAt(this.lookTarget);
     this.camFov = 55;
     this.camera.fov = 55;
     this.camera.updateProjectionMatrix();
 
-    this.live.x = SPAWN.x;
-    this.live.z = SPAWN.z;
+    this.live.x = this.playerPos.x;
+    this.live.z = this.playerPos.z;
     this.live.heading = 0;
     this.live.speed = 0;
   }
