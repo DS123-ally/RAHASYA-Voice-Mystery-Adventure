@@ -155,6 +155,8 @@ function markerColourForKind(kind: TaskKind): number {
       return 0xe74c3c;
     case "bus":
       return 0x3498db;
+    case "guide":
+      return 0x3498db;
     default: {
       const _exhaustive: never = kind;
       return _exhaustive;

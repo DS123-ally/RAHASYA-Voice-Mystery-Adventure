@@ -28,6 +28,7 @@ import Title from "./Title";
 import EnterLoading from "./EnterLoading";
 import Hud from "./Hud";
 import Dialogue from "./Dialogue";
+import FreeChat from "./FreeChat";
 import VirtualJoystick from "./VirtualJoystick";
 import LandscapeGate from "./LandscapeGate";
 import SignOutButton from "@/components/auth/SignOutButton";

@@ -7,7 +7,7 @@ import {
   type LessonTier,
 } from "@/lib/game/levels";
 
-export type TaskKind = "auto" | "shop" | "temple" | "bus";
+export type TaskKind = "auto" | "shop" | "temple" | "bus" | "guide";
 
 export type StreetTask = {
   id: string;
@@ -42,6 +42,7 @@ export type DistrictTaskPack = {
 /** What the dialogue UI needs — tasks and legacy NPCs share this shape. */
 export type LessonTarget = {
   id: string;
+  kind?: TaskKind;
   name: string;
   role: string;
   colour: number;
@@ -77,6 +78,7 @@ export function taskAsLessonTarget(
 ): LessonTarget {
   return {
     id: task.id,
+    kind: task.kind,
     name: task.name,
     role: task.role,
     colour: task.colour,
@@ -178,6 +180,22 @@ const puraniSadak: DistrictTaskPack = {
       completionNote: "Filter coffee - perfect for the journey.",
       lessons: streetLessonsFor("purani-sadak-coffee"),
     },
+    {
+      id: "purani-sadak-guide",
+      districtId: "purani-sadak",
+      kind: "guide",
+      pos: [15, -15],
+      title: "Local Guide",
+      brief: "Chat freely with a local resident about the city.",
+      reward: 50,
+      interactLabel: "Chat with Local",
+      name: "City Guide",
+      role: "Local Resident",
+      speaker: "rohan",
+      colour: 0x3498db,
+      completionNote: "Nice chat!",
+      lessons: { easy: [], medium: [], hard: [] },
+    },
   ],
 };
 
@@ -267,6 +285,22 @@ const marinaNagar: DistrictTaskPack = {
       colour: 0xd35400,
       completionNote: "Filter coffee - perfect for the journey.",
       lessons: streetLessonsFor("marina-nagar-coffee"),
+    },
+    {
+      id: "marina-nagar-guide",
+      districtId: "marina-nagar",
+      kind: "guide",
+      pos: [15, -15],
+      title: "Local Guide",
+      brief: "Chat freely with a local resident about the city.",
+      reward: 50,
+      interactLabel: "Chat with Local",
+      name: "City Guide",
+      role: "Local Resident",
+      speaker: "rohan",
+      colour: 0x3498db,
+      completionNote: "Nice chat!",
+      lessons: { easy: [], medium: [], hard: [] },
     },
   ],
 };
@@ -358,6 +392,22 @@ const majesticCross: DistrictTaskPack = {
       completionNote: "Filter coffee - perfect for the journey.",
       lessons: streetLessonsFor("majestic-cross-coffee"),
     },
+    {
+      id: "majestic-cross-guide",
+      districtId: "majestic-cross",
+      kind: "guide",
+      pos: [15, -15],
+      title: "Local Guide",
+      brief: "Chat freely with a local resident about the city.",
+      reward: 50,
+      interactLabel: "Chat with Local",
+      name: "City Guide",
+      role: "Local Resident",
+      speaker: "rohan",
+      colour: 0x3498db,
+      completionNote: "Nice chat!",
+      lessons: { easy: [], medium: [], hard: [] },
+    },
   ],
 };
 
@@ -447,6 +497,22 @@ const parkGully: DistrictTaskPack = {
       colour: 0xd35400,
       completionNote: "Filter coffee - perfect for the journey.",
       lessons: streetLessonsFor("park-gully-coffee"),
+    },
+    {
+      id: "park-gully-guide",
+      districtId: "park-gully",
+      kind: "guide",
+      pos: [15, -15],
+      title: "Local Guide",
+      brief: "Chat freely with a local resident about the city.",
+      reward: 50,
+      interactLabel: "Chat with Local",
+      name: "City Guide",
+      role: "Local Resident",
+      speaker: "rohan",
+      colour: 0x3498db,
+      completionNote: "Nice chat!",
+      lessons: { easy: [], medium: [], hard: [] },
     },
   ],
 };
