@@ -16,6 +16,11 @@ import type { ComfortLevel } from "@/lib/game/levels";
 import type { BaseLangCode } from "@/lib/i18n/base-lang";
 import { readStoredBaseLang } from "@/lib/i18n/base-lang";
 import type { DistrictProgress } from "@/lib/game/progress";
+import {
+  addCollectedSouvenir,
+  souvenirForTask,
+  type Souvenir,
+} from "@/lib/game/souvenirs";
 import { errandLevelNumber, lessonTierFor } from "@/lib/game/levels";
 import { useGameAudio } from "@/lib/audio/useGameAudio";
 import { playSfx } from "@/lib/audio/sfx";
@@ -76,6 +81,7 @@ export default function GameShell() {
   const [xp, setXp] = useState(0);
   const [completed, setCompleted] = useState<Set<string>>(new Set());
   const [artifacts, setArtifacts] = useState<string[]>([]);
+  const [backpack, setBackpack] = useState<Souvenir[]>([]);
   const [toast, setToast] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [phrasesOpen, setPhrasesOpen] = useState(false);
@@ -193,6 +199,7 @@ export default function GameShell() {
         setCompleted(compSet);
         initialCompletedRef.current = compSet;
         setArtifacts([]);
+        setBackpack(districtPayload.tasks.filter((task) => compSet.has(task.id)).map(souvenirForTask));
         setNpcMemory({});
         metRef.current = new Set();
         posthog.capture("district_entered", {
@@ -382,6 +389,11 @@ export default function GameShell() {
       setArtifacts((prev) =>
         prev.includes(task.completionNote) ? prev : [...prev, task.completionNote]
       );
+      const souvenir = souvenirForTask(task);
+      const isNewSouvenir = addCollectedSouvenir(souvenir);
+      setBackpack((prev) =>
+        prev.some((item) => item.id === souvenir.id) ? prev : [...prev, souvenir]
+      );
       gameRef.current?.markDone(taskId);
       playSfx("cash");
       posthog.capture("errand_completed", {
@@ -394,6 +406,9 @@ export default function GameShell() {
         reward,
         total_cash: nextCash,
         errands_completed_in_district: nextCompleted.size,
+        souvenir_id: souvenir.id,
+        souvenir_name: souvenir.name,
+        souvenir_new: isNewSouvenir,
       });
 
       void persistProgress({
@@ -404,7 +419,7 @@ export default function GameShell() {
         completedTaskIds: [...nextCompleted],
       });
 
-      setToast(`Done: ${task.title}`);
+      setToast(isNewSouvenir ? `Souvenir collected: ${souvenir.name}` : `Done: ${task.title}`);
       setTimeout(() => setToast(null), 4000);
       setTalking(null);
     },
@@ -432,6 +447,7 @@ export default function GameShell() {
     setXp(0);
     setCompleted(new Set());
     setArtifacts([]);
+    setBackpack([]);
     setToast(null);
     setMenuOpen(false);
     setPhrasesOpen(false);
@@ -472,6 +488,7 @@ export default function GameShell() {
         cash={cash}
         xp={xp}
         artifacts={artifacts}
+        souvenirs={backpack}
         completed={completed}
         errandProgress={{ done: completed.size, total: tasks.length }}
         onOpen={openTalk}

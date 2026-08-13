@@ -20,6 +20,11 @@ import { getAudioContext } from "@/lib/audio/engine";
 import { playSfx } from "@/lib/audio/sfx";
 import SignOutButton from "@/components/auth/SignOutButton";
 import LeaderboardStats from "@/components/LeaderboardStats";
+import {
+  ALL_SOUVENIRS,
+  readCollectedSouvenirs,
+  type Souvenir,
+} from "@/lib/game/souvenirs";
 
 type DistrictSummary = {
   id: string;
@@ -95,9 +100,11 @@ export default function Title({
   const [detailError, setDetailError] = useState<string | null>(null);
   const [comfort, setComfort] = useState<ComfortLevel>("medium");
   const [baseLang, setBaseLang] = useState<BaseLangCode>("en-IN");
+  const [souvenirs, setSouvenirs] = useState<Souvenir[]>([]);
 
   useEffect(() => {
     setBaseLang(readStoredBaseLang());
+    setSouvenirs(readCollectedSouvenirs());
   }, []);
 
   useEffect(() => {
@@ -468,6 +475,40 @@ export default function Title({
                   <Badge>{pickedSummary?.languageLabel ?? "—"}</Badge>
                   <Badge variant="neutral">{pickedSummary?.taskCount ?? 0} errands</Badge>
                   <Badge variant="neutral">{pickedComfort.title}</Badge>
+                </div>
+
+                <div className="rounded-base border-2 border-border bg-secondary-background p-3 text-left">
+                  <div className="mb-2 flex items-center justify-between gap-2">
+                    <h3 className="text-xs font-heading uppercase tracking-widest text-main">
+                      Trophy Case
+                    </h3>
+                    <Badge variant="neutral">
+                      {souvenirs.length}/{ALL_SOUVENIRS.length}
+                    </Badge>
+                  </div>
+                  {souvenirs.length === 0 ? (
+                    <p className="text-xs text-foreground/70">
+                      Complete errands to collect cultural souvenirs from every city.
+                    </p>
+                  ) : (
+                    <ul className="grid grid-cols-4 gap-2" aria-label="Collected souvenirs">
+                      {souvenirs.slice(0, 8).map((item) => (
+                        <li
+                          key={item.id}
+                          className="flex aspect-square items-center justify-center rounded-base border-2 border-border bg-background text-xl shadow-[2px_2px_0_0_var(--border)]"
+                          title={`${item.name}: ${item.description}`}
+                        >
+                          <span aria-hidden>{item.icon}</span>
+                          <span className="sr-only">{item.name}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {souvenirs.length > 8 && (
+                    <p className="mt-2 text-xs text-foreground/70">
+                      +{souvenirs.length - 8} more in your backpack.
+                    </p>
+                  )}
                 </div>
 
                 <p className="text-sm leading-relaxed text-foreground/80">

@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { LocateFixed, PanelLeftClose, PanelLeftOpen, Volume2, VolumeX } from "lucide-react";
+import type { Souvenir } from "@/lib/game/souvenirs";
 
 const MAP_PX = 168;
 const MAP_PX_MOBILE = 80;
@@ -341,12 +342,41 @@ function ErrandsList({
   );
 }
 
-function ArtifactsList({ artifacts }: { artifacts: string[] }) {
-  if (artifacts.length === 0) {
+function BackpackList({
+  artifacts,
+  souvenirs,
+}: {
+  artifacts: string[];
+  souvenirs: Souvenir[];
+}) {
+  if (souvenirs.length === 0 && artifacts.length === 0) {
     return (
       <p className="text-xs italic text-foreground/70">
-        Walk the map — autos, stalls, temples, buses.
+        Finish errands to collect local souvenirs.
       </p>
+    );
+  }
+  if (souvenirs.length > 0) {
+    return (
+      <ol className="grid list-none gap-2">
+        {souvenirs.map((item) => (
+          <li
+            key={item.id}
+            className="flex gap-2 rounded-base border-2 border-border bg-secondary-background p-2 text-xs"
+          >
+            <span
+              className="flex size-8 shrink-0 items-center justify-center rounded-base bg-main/15 text-lg"
+              aria-hidden
+            >
+              {item.icon}
+            </span>
+            <span>
+              <strong className="block font-heading">{item.name}</strong>
+              <em className="not-italic text-foreground/70">{item.description}</em>
+            </span>
+          </li>
+        ))}
+      </ol>
     );
   }
   return (
@@ -370,6 +400,7 @@ export default function Hud({
   xp,
   live,
   artifacts,
+  souvenirs,
   completed,
   errandProgress,
   onOpen,
@@ -392,6 +423,7 @@ export default function Hud({
   cash: number;
   xp: number;
   artifacts: string[];
+  souvenirs: Souvenir[];
   completed: Set<string>;
   errandProgress: { done: number; total: number };
   onOpen: () => void;
@@ -511,11 +543,11 @@ export default function Hud({
               <HudCard className="py-2">
                 <CardHeader className="px-3 pb-0">
                   <CardTitle className="text-[0.65rem] uppercase tracking-widest text-main">
-                    Done · {artifacts.length}
+                    Backpack · {souvenirs.length}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="px-3 pt-0">
-                  <ArtifactsList artifacts={artifacts} />
+                  <BackpackList artifacts={artifacts} souvenirs={souvenirs} />
                 </CardContent>
               </HudCard>
             </div>
@@ -614,11 +646,11 @@ export default function Hud({
           <HudCard className="absolute bottom-6 left-6 w-72 max-w-[calc(100vw-3rem)] max-lg:hidden">
             <CardHeader className="px-4 pb-0">
               <CardTitle className="text-xs uppercase tracking-widest text-main">
-                Done · {artifacts.length}
+                Backpack · {souvenirs.length}
               </CardTitle>
             </CardHeader>
             <CardContent className="px-4 pt-0">
-              <ArtifactsList artifacts={artifacts} />
+              <BackpackList artifacts={artifacts} souvenirs={souvenirs} />
             </CardContent>
           </HudCard>
 
