@@ -94,4 +94,27 @@ export const LESSONS: Record<string, StreetTaskLessons> = {
       s("போங்க", "Ponga", "Go ahead", "நன்றி", "Nandri", "Thank you"),
     ],
   },
+  "marina-nagar-coffee": {
+    easy: [
+      s("என்ன வேண்டும்?", "Enna vendum?", "What will you have?", "ஒரு ஃபில்டர் காபி கொடுங்க", "Oru filter coffee kodunga", "Give me one filter coffee"),
+      s("முப்பது ரூபாய்", "Muppathu roobai", "Thirty rupees", "இந்தாங்க", "Indhaanga", "Here you go"),
+      s("இந்தா காபி", "Indhaa coffee", "Here is the coffee", "நன்றி", "Nandri", "Thank you"),
+    ],
+    medium: [
+      s("என்ன வேண்டும்?", "Enna vendum?", "What will you have?", "ஒரு ஃபில்டர் காபி கொடுங்க", "Oru filter coffee kodunga", "Give me one filter coffee"),
+      s("சூடா வேணுமா, ஆறியதா?", "Sooda venuma, aariyathaa?", "Hot or cold?", "சூடான காபி", "Soodana coffee", "Hot coffee"),
+      s("சர்க்கரை எவ்ளோ?", "Sarkkarai evlo?", "How much sugar?", "கொஞ்சம் கம்மியா", "Konjam kammiya", "A little less sugar"),
+      s("முப்பது ரூபாய்", "Muppathu roobai", "Thirty rupees", "இந்தாங்க", "Indhaanga", "Here you go"),
+      s("இந்தா காபி", "Indhaa coffee", "Here is the coffee", "நன்றி", "Nandri", "Thank you"),
+    ],
+    hard: [
+      s("என்ன வேண்டும்?", "Enna vendum?", "What will you have?", "ஒரு ஃபில்டர் காபி கொடுங்க", "Oru filter coffee kodunga", "Give me one filter coffee"),
+      s("சூடா வேணுமா, ஆறியதா?", "Sooda venuma, aariyathaa?", "Hot or cold?", "சூடான காபி", "Soodana coffee", "Hot coffee"),
+      s("சர்க்கரை எவ்ளோ?", "Sarkkarai evlo?", "How much sugar?", "கொஞ்சம் கம்மியா", "Konjam kammiya", "A little less sugar"),
+      s("வேறெதும் வேணுமா?", "Verethum venuma?", "Anything else?", "இல்ல, காபி போதும்", "Illa, coffee pothum", "No, just coffee"),
+      s("முப்பது ரூபாய்", "Muppathu roobai", "Thirty rupees", "இந்தாங்க", "Indhaanga", "Here you go"),
+      s("சில்லறை இருக்கா?", "Sillarai irukkaa?", "Do you have change?", "ஆமா, இதோ இருக்கு", "Aama, idho irukku", "Yes, here it is"),
+      s("இந்தா காபி", "Indhaa coffee", "Here is the coffee", "நன்றி", "Nandri", "Thank you"),
+    ],
+  },
 };

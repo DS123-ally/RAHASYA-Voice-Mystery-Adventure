@@ -94,4 +94,27 @@ export const LESSONS: Record<string, StreetTaskLessons> = {
       s("যান", "Jan", "Go", "ধন্যবাদ", "Dhonnobad", "Thank you"),
     ],
   },
+  "park-gully-coffee": {
+    easy: [
+      s("কী খাবেন?", "Ki khaben?", "What will you have?", "একটা ফিল্টার কফি দিন", "Ekta filter coffee din", "Give me one filter coffee"),
+      s("ত্রিশ টাকা", "Trish taka", "Thirty rupees", "এই নিন", "Ei nin", "Here you go"),
+      s("এই যে কফি", "Ei je coffee", "Here is the coffee", "ধন্যবাদ", "Dhonnobad", "Thank you"),
+    ],
+    medium: [
+      s("কী খাবেন?", "Ki khaben?", "What will you have?", "একটা ফিল্টার কফি দিন", "Ekta filter coffee din", "Give me one filter coffee"),
+      s("গরম না ঠাণ্ডা?", "Gorom na thanda?", "Hot or cold?", "গরম কফি", "Gorom coffee", "Hot coffee"),
+      s("চিনি কতটা?", "Chini kotota?", "How much sugar?", "একটু কম", "Ektu kom", "A little less sugar"),
+      s("ত্রিশ টাকা", "Trish taka", "Thirty rupees", "এই নিন", "Ei nin", "Here you go"),
+      s("এই যে কফি", "Ei je coffee", "Here is the coffee", "ধন্যবাদ", "Dhonnobad", "Thank you"),
+    ],
+    hard: [
+      s("কী খাবেন?", "Ki khaben?", "What will you have?", "একটা ফিল্টার কফি দিন", "Ekta filter coffee din", "Give me one filter coffee"),
+      s("গরম না ঠাণ্ডা?", "Gorom na thanda?", "Hot or cold?", "গরম কফি", "Gorom coffee", "Hot coffee"),
+      s("চিনি কতটা?", "Chini kotota?", "How much sugar?", "একটু কম", "Ektu kom", "A little less sugar"),
+      s("আর কিছু লাগবে?", "Aar kichu lagbe?", "Anything else?", "না, শুধু কফি", "Na, shudhu coffee", "No, just coffee"),
+      s("ত্রিশ টাকা", "Trish taka", "Thirty rupees", "এই নিন", "Ei nin", "Here you go"),
+      s("খুচরো আছে?", "Khuchro ache?", "Do you have change?", "হ্যাঁ, এই যে", "Haa, ei je", "Yes, here it is"),
+      s("এই যে কফি", "Ei je coffee", "Here is the coffee", "ধন্যবাদ", "Dhonnobad", "Thank you"),
+    ],
+  },
 };

@@ -94,4 +94,27 @@ export const LESSONS: Record<string, StreetTaskLessons> = {
       s("ഇതാ, ticket", "Ithaa, ticket", "Here, your ticket", "നന്ദി", "Nandi", "Thank you"),
     ],
   },
+  "fort-kochi-coffee": {
+    easy: [
+      s("എന്താ വേണ്ടത്?", "Entha vendathu?", "What will you have?", "ഒരു ഫിൽറ്റർ കോഫി തരൂ", "Oru filter coffee tharoo", "Give me one filter coffee"),
+      s("മുപ്പത് രൂപ", "Muppathu roopa", "Thirty rupees", "ഇതാ", "Itha", "Here you go"),
+      s("ഇതാ കോഫി", "Itha coffee", "Here is the coffee", "നന്ദി", "Nandi", "Thank you"),
+    ],
+    medium: [
+      s("എന്താ വേണ്ടത്?", "Entha vendathu?", "What will you have?", "ഒരു ഫിൽറ്റർ കോഫി തരൂ", "Oru filter coffee tharoo", "Give me one filter coffee"),
+      s("ചൂടാണോ തണുപ്പാണോ?", "Choodaano thanuppaano?", "Hot or cold?", "ചൂടുള്ള കോഫി", "Choodulla coffee", "Hot coffee"),
+      s("മധുരം എത്ര?", "Madhuram ethra?", "How much sugar?", "കുറച്ചു മതി", "Kurachu mathi", "A little less sugar"),
+      s("മുപ്പത് രൂപ", "Muppathu roopa", "Thirty rupees", "ഇതാ", "Itha", "Here you go"),
+      s("ഇതാ കോഫി", "Itha coffee", "Here is the coffee", "നന്ദി", "Nandi", "Thank you"),
+    ],
+    hard: [
+      s("എന്താ വേണ്ടത്?", "Entha vendathu?", "What will you have?", "ഒരു ഫിൽറ്റർ കോഫി തരൂ", "Oru filter coffee tharoo", "Give me one filter coffee"),
+      s("ചൂടാണോ തണുപ്പാണോ?", "Choodaano thanuppaano?", "Hot or cold?", "ചൂടുള്ള കോഫി", "Choodulla coffee", "Hot coffee"),
+      s("മധുരം എത്ര?", "Madhuram ethra?", "How much sugar?", "കുറച്ചു മതി", "Kurachu mathi", "A little less sugar"),
+      s("വേറെ എന്തെങ്കിലും വേണമോ?", "Vere enthengilum venamo?", "Anything else?", "വേണ്ട, കോഫി മതി", "Venda, coffee mathi", "No, just coffee"),
+      s("മുപ്പത് രൂപ", "Muppathu roopa", "Thirty rupees", "ഇതാ", "Itha", "Here you go"),
+      s("ചില്ലറ ഉണ്ടോ?", "Chillara undo?", "Do you have change?", "ഉണ്ട്, ഇതാ", "Undu, itha", "Yes, here it is"),
+      s("ഇതാ കോഫി", "Itha coffee", "Here is the coffee", "നന്ദി", "Nandi", "Thank you"),
+    ],
+  },
 };

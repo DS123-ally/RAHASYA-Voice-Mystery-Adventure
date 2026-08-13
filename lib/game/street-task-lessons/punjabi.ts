@@ -94,4 +94,27 @@ export const LESSONS: Record<string, StreetTaskLessons> = {
       s("ਲੋ, ਟਿਕਟ", "Lo, ticket", "Here, your ticket", "ਧੰਨਵਾਦ", "Dhannvaad", "Thank you"),
     ],
   },
+  "hall-bazaar-coffee": {
+    easy: [
+      s("ਕੀ ਲਵੋਗੇ?", "Ki lavoge?", "What will you have?", "ਇੱਕ ਫਿਲਟਰ ਕੌਫੀ ਦਿਓ", "Ek filter coffee dio", "Give me one filter coffee"),
+      s("ਤੀਹ ਰੁਪਏ", "Teeh rupaye", "Thirty rupees", "ਆਹ ਲਓ", "Aah lao", "Here you go"),
+      s("ਆਹ ਲਓ ਕੌਫੀ", "Aah lao coffee", "Here is the coffee", "ਧੰਨਵਾਦ", "Dhanvaad", "Thank you"),
+    ],
+    medium: [
+      s("ਕੀ ਲਵੋਗੇ?", "Ki lavoge?", "What will you have?", "ਇੱਕ ਫਿਲਟਰ ਕੌਫੀ ਦਿਓ", "Ek filter coffee dio", "Give me one filter coffee"),
+      s("ਗਰਮ ਜਾਂ ਠੰਡੀ?", "Garam ya thandi?", "Hot or cold?", "ਗਰਮ ਕੌਫੀ", "Garam coffee", "Hot coffee"),
+      s("ਖੰਡ ਕਿੰਨੀ?", "Khand kinni?", "How much sugar?", "ਥੋੜੀ ਘੱਟ", "Thodi ghat", "A little less sugar"),
+      s("ਤੀਹ ਰੁਪਏ", "Teeh rupaye", "Thirty rupees", "ਆਹ ਲਓ", "Aah lao", "Here you go"),
+      s("ਆਹ ਲਓ ਕੌਫੀ", "Aah lao coffee", "Here is the coffee", "ਧੰਨਵਾਦ", "Dhanvaad", "Thank you"),
+    ],
+    hard: [
+      s("ਕੀ ਲਵੋਗੇ?", "Ki lavoge?", "What will you have?", "ਇੱਕ ਫਿਲਟਰ ਕੌਫੀ ਦਿਓ", "Ek filter coffee dio", "Give me one filter coffee"),
+      s("ਗਰਮ ਜਾਂ ਠੰਡੀ?", "Garam ya thandi?", "Hot or cold?", "ਗਰਮ ਕੌਫੀ", "Garam coffee", "Hot coffee"),
+      s("ਖੰਡ ਕਿੰਨੀ?", "Khand kinni?", "How much sugar?", "ਥੋੜੀ ਘੱਟ", "Thodi ghat", "A little less sugar"),
+      s("ਹੋਰ ਕੁਝ ਚਾਹੀਦਾ ਹੈ?", "Hor kuch chahida hai?", "Anything else?", "ਨਹੀਂ, ਬਸ ਕੌਫੀ", "Nahi, bas coffee", "No, just coffee"),
+      s("ਤੀਹ ਰੁਪਏ", "Teeh rupaye", "Thirty rupees", "ਆਹ ਲਓ", "Aah lao", "Here you go"),
+      s("ਖੁੱਲ੍ਹੇ ਪੈਸੇ ਹੈਗੇ?", "Khulle paise haige?", "Do you have change?", "ਹਾਂ, ਆਹ ਲਓ", "Haan, aah lao", "Yes, here it is"),
+      s("ਆਹ ਲਓ ਕੌਫੀ", "Aah lao coffee", "Here is the coffee", "ਧੰਨਵਾਦ", "Dhanvaad", "Thank you"),
+    ],
+  },
 };

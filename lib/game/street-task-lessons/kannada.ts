@@ -94,4 +94,27 @@ export const LESSONS: Record<string, StreetTaskLessons> = {
       s("ಹೋಗಿ", "Hogi", "Go", "ಧನ್ಯವಾದ", "Dhanyavaada", "Thank you"),
     ],
   },
+  "majestic-cross-coffee": {
+    easy: [
+      s("ಏನು ಬೇಕು?", "Enu beku?", "What will you have?", "ಒಂದು ಫಿಲ್ಟರ್ ಕಾಫಿ ಕೊಡಿ", "Ondu filter coffee kodi", "Give me one filter coffee"),
+      s("ಮೂವತ್ತು ರೂಪಾಯಿ", "Moovattu roopayi", "Thirty rupees", "ತಗೋಳಿ", "Tagoli", "Here you go"),
+      s("ಇಗೋ ಕಾಫಿ", "Igo coffee", "Here is the coffee", "ಧನ್ಯವಾದ", "Dhanyavada", "Thank you"),
+    ],
+    medium: [
+      s("ಏನು ಬೇಕು?", "Enu beku?", "What will you have?", "ಒಂದು ಫಿಲ್ಟರ್ ಕಾಫಿ ಕೊಡಿ", "Ondu filter coffee kodi", "Give me one filter coffee"),
+      s("ಬಿಸಿಯಾ ಅಥವಾ ತಣ್ಣಗಾ?", "Bisiya athava thannaga?", "Hot or cold?", "ಬಿಸಿ ಕಾಫಿ", "Bisi coffee", "Hot coffee"),
+      s("ಸಕ್ಕರೆ ಎಷ್ಟು?", "Sakkare eshtu?", "How much sugar?", "ಸ್ವಲ್ಪ ಕಡಿಮೆ", "Svalpa kadime", "A little less sugar"),
+      s("ಮೂವತ್ತು ರೂಪಾಯಿ", "Moovattu roopayi", "Thirty rupees", "ತಗೋಳಿ", "Tagoli", "Here you go"),
+      s("ಇಗೋ ಕಾಫಿ", "Igo coffee", "Here is the coffee", "ಧನ್ಯವಾದ", "Dhanyavada", "Thank you"),
+    ],
+    hard: [
+      s("ಏನು ಬೇಕು?", "Enu beku?", "What will you have?", "ಒಂದು ಫಿಲ್ಟರ್ ಕಾಫಿ ಕೊಡಿ", "Ondu filter coffee kodi", "Give me one filter coffee"),
+      s("ಬಿಸಿಯಾ ಅಥವಾ ತಣ್ಣಗಾ?", "Bisiya athava thannaga?", "Hot or cold?", "ಬಿಸಿ ಕಾಫಿ", "Bisi coffee", "Hot coffee"),
+      s("ಸಕ್ಕರೆ ಎಷ್ಟು?", "Sakkare eshtu?", "How much sugar?", "ಸ್ವಲ್ಪ ಕಡಿಮೆ", "Svalpa kadime", "A little less sugar"),
+      s("ಬೇರೆ ಏನಾದರೂ ಬೇಕಾ?", "Bere enaadaru bekaa?", "Anything else?", "ಇಲ್ಲ, ಕಾಫಿ ಸಾಕು", "Illa, coffee saaku", "No, just coffee"),
+      s("ಮೂವತ್ತು ರೂಪಾಯಿ", "Moovattu roopayi", "Thirty rupees", "ತಗೋಳಿ", "Tagoli", "Here you go"),
+      s("ಚಿಲ್ಲರೆ ಇದೆಯಾ?", "Chillare ideya?", "Do you have change?", "ಹೌದು, ಇಲ್ಲಿದೆ", "Houdu, illide", "Yes, here it is"),
+      s("ಇಗೋ ಕಾಫಿ", "Igo coffee", "Here is the coffee", "ಧನ್ಯವಾದ", "Dhanyavada", "Thank you"),
+    ],
+  },
 };

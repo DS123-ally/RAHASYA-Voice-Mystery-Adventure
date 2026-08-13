@@ -177,4 +177,50 @@ export const LESSONS: Record<string, StreetTaskLessons> = {
       s("घ्या, तिकीट", "Ghya, ticket", "Here, your ticket", "धन्यवाद", "Dhanyavaad", "Thank you"),
     ],
   },
+  "dadar-chowk-coffee": {
+    easy: [
+      s("काय घेणार?", "Kaay ghenar?", "What will you have?", "एक फिल्टर कॉफी द्या", "Ek filter coffee dya", "Give me one filter coffee"),
+      s("तीस रुपये", "Tees rupaye", "Thirty rupees", "हे घ्या", "He ghya", "Here you go"),
+      s("ही घ्या कॉफी", "Hee ghya coffee", "Here is the coffee", "धन्यवाद", "Dhanyawad", "Thank you"),
+    ],
+    medium: [
+      s("काय घेणार?", "Kaay ghenar?", "What will you have?", "एक फिल्टर कॉफी द्या", "Ek filter coffee dya", "Give me one filter coffee"),
+      s("गरम की थंड?", "Garam ki thand?", "Hot or cold?", "गरम कॉफी", "Garam coffee", "Hot coffee"),
+      s("साखर किती?", "Sakhar kiti?", "How much sugar?", "थोडी कमी", "Thodi kami", "A little less sugar"),
+      s("तीस रुपये", "Tees rupaye", "Thirty rupees", "हे घ्या", "He ghya", "Here you go"),
+      s("ही घ्या कॉफी", "Hee ghya coffee", "Here is the coffee", "धन्यवाद", "Dhanyawad", "Thank you"),
+    ],
+    hard: [
+      s("काय घेणार?", "Kaay ghenar?", "What will you have?", "एक फिल्टर कॉफी द्या", "Ek filter coffee dya", "Give me one filter coffee"),
+      s("गरम की थंड?", "Garam ki thand?", "Hot or cold?", "गरम कॉफी", "Garam coffee", "Hot coffee"),
+      s("साखर किती?", "Sakhar kiti?", "How much sugar?", "थोडी कमी", "Thodi kami", "A little less sugar"),
+      s("अजून काही पाहिजे?", "Ajun kahi pahije?", "Anything else?", "नाही, फक्त कॉफी", "Nahi, phakta coffee", "No, just coffee"),
+      s("तीस रुपये", "Tees rupaye", "Thirty rupees", "हे घ्या", "He ghya", "Here you go"),
+      s("सुट्टे पैसे आहेत का?", "Sutte paise ahet ka?", "Do you have change?", "हो, हे घ्या", "Ho, he ghya", "Yes, here it is"),
+      s("ही घ्या कॉफी", "Hee ghya coffee", "Here is the coffee", "धन्यवाद", "Dhanyawad", "Thank you"),
+    ],
+  },
+  "deccan-pune-coffee": {
+    easy: [
+      s("काय घेणार?", "Kaay ghenar?", "What will you have?", "एक फिल्टर कॉफी द्या", "Ek filter coffee dya", "Give me one filter coffee"),
+      s("तीस रुपये", "Tees rupaye", "Thirty rupees", "हे घ्या", "He ghya", "Here you go"),
+      s("ही घ्या कॉफी", "Hee ghya coffee", "Here is the coffee", "धन्यवाद", "Dhanyawad", "Thank you"),
+    ],
+    medium: [
+      s("काय घेणार?", "Kaay ghenar?", "What will you have?", "एक फिल्टर कॉफी द्या", "Ek filter coffee dya", "Give me one filter coffee"),
+      s("गरम की थंड?", "Garam ki thand?", "Hot or cold?", "गरम कॉफी", "Garam coffee", "Hot coffee"),
+      s("साखर किती?", "Sakhar kiti?", "How much sugar?", "थोडी कमी", "Thodi kami", "A little less sugar"),
+      s("तीस रुपये", "Tees rupaye", "Thirty rupees", "हे घ्या", "He ghya", "Here you go"),
+      s("ही घ्या कॉफी", "Hee ghya coffee", "Here is the coffee", "धन्यवाद", "Dhanyawad", "Thank you"),
+    ],
+    hard: [
+      s("काय घेणार?", "Kaay ghenar?", "What will you have?", "एक फिल्टर कॉफी द्या", "Ek filter coffee dya", "Give me one filter coffee"),
+      s("गरम की थंड?", "Garam ki thand?", "Hot or cold?", "गरम कॉफी", "Garam coffee", "Hot coffee"),
+      s("साखर किती?", "Sakhar kiti?", "How much sugar?", "थोडी कमी", "Thodi kami", "A little less sugar"),
+      s("अजून काही पाहिजे?", "Ajun kahi pahije?", "Anything else?", "नाही, फक्त कॉफी", "Nahi, phakta coffee", "No, just coffee"),
+      s("तीस रुपये", "Tees rupaye", "Thirty rupees", "हे घ्या", "He ghya", "Here you go"),
+      s("सुट्टे पैसे आहेत का?", "Sutte paise ahet ka?", "Do you have change?", "हो, हे घ्या", "Ho, he ghya", "Yes, here it is"),
+      s("ही घ्या कॉफी", "Hee ghya coffee", "Here is the coffee", "धन्यवाद", "Dhanyawad", "Thank you"),
+    ],
+  },
 };

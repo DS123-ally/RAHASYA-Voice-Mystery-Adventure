@@ -94,4 +94,27 @@ export const LESSONS: Record<string, StreetTaskLessons> = {
       s("લો, ટિકિટ", "Lo, ticket", "Here, your ticket", "આભાર", "Aabhaar", "Thank you"),
     ],
   },
+  "manek-chowk-coffee": {
+    easy: [
+      s("શું લેશો?", "Shu lesho?", "What will you have?", "એક ફિલ્ટર કોફી આપો", "Ek filter coffee aapo", "Give me one filter coffee"),
+      s("ત્રીસ રૂપિયા", "Trees rupiya", "Thirty rupees", "આ લો", "Aa lo", "Here you go"),
+      s("આ લો કોફી", "Aa lo coffee", "Here is the coffee", "આભાર", "Aabhar", "Thank you"),
+    ],
+    medium: [
+      s("શું લેશો?", "Shu lesho?", "What will you have?", "એક ફિલ્ટર કોફી આપો", "Ek filter coffee aapo", "Give me one filter coffee"),
+      s("ગરમ કે ઠંડી?", "Garam ke thandi?", "Hot or cold?", "ગરમ કોફી", "Garam coffee", "Hot coffee"),
+      s("ખાંડ કેટલી?", "Khaand ketli?", "How much sugar?", "થોડી ઓછી", "Thodi ochhi", "A little less sugar"),
+      s("ત્રીસ રૂપિયા", "Trees rupiya", "Thirty rupees", "આ લો", "Aa lo", "Here you go"),
+      s("આ લો કોફી", "Aa lo coffee", "Here is the coffee", "આભાર", "Aabhar", "Thank you"),
+    ],
+    hard: [
+      s("શું લેશો?", "Shu lesho?", "What will you have?", "એક ફિલ્ટર કોફી આપો", "Ek filter coffee aapo", "Give me one filter coffee"),
+      s("ગરમ કે ઠંડી?", "Garam ke thandi?", "Hot or cold?", "ગરમ કોફી", "Garam coffee", "Hot coffee"),
+      s("ખાંડ કેટલી?", "Khaand ketli?", "How much sugar?", "થોડી ઓછી", "Thodi ochhi", "A little less sugar"),
+      s("બીજું કંઈ જોઈએ છે?", "Biju kai joiye che?", "Anything else?", "ના, બસ કોફી", "Na, bas coffee", "No, just coffee"),
+      s("ત્રીસ રૂપિયા", "Trees rupiya", "Thirty rupees", "આ લો", "Aa lo", "Here you go"),
+      s("છૂટા પૈસા છે?", "Chhoota paisa che?", "Do you have change?", "હા, આ લો", "Ha, aa lo", "Yes, here it is"),
+      s("આ લો કોફી", "Aa lo coffee", "Here is the coffee", "આભાર", "Aabhar", "Thank you"),
+    ],
+  },
 };

@@ -94,4 +94,27 @@ export const LESSONS: Record<string, StreetTaskLessons> = {
       s("लो, टिकट", "Lo, ticket", "Here, your ticket", "धन्यवाद", "Dhanyavaad", "Thank you"),
     ],
   },
+  "purani-sadak-coffee": {
+    easy: [
+      s("क्या लेंगे?", "Kya lenge?", "What will you have?", "एक फ़िल्टर कॉफ़ी देना", "Ek filter coffee dena", "Give me one filter coffee"),
+      s("तीस रुपये", "Tees rupaye", "Thirty rupees", "ये लीजिए", "Ye lijiye", "Here you go"),
+      s("ये रही कॉफ़ी", "Ye rahi coffee", "Here is the coffee", "धन्यवाद", "Dhanyavaad", "Thank you"),
+    ],
+    medium: [
+      s("क्या लेंगे?", "Kya lenge?", "What will you have?", "एक फ़िल्टर कॉफ़ी देना", "Ek filter coffee dena", "Give me one filter coffee"),
+      s("गरम या ठंडी?", "Garam ya thandi?", "Hot or cold?", "गरम कॉफ़ी", "Garam coffee", "Hot coffee"),
+      s("चीनी कितनी?", "Cheeni kitni?", "How much sugar?", "थोड़ी कम चीनी", "Thodi kam cheeni", "A little less sugar"),
+      s("तीस रुपये", "Tees rupaye", "Thirty rupees", "ये लीजिए", "Ye lijiye", "Here you go"),
+      s("ये रही कॉफ़ी", "Ye rahi coffee", "Here is the coffee", "धन्यवाद", "Dhanyavaad", "Thank you"),
+    ],
+    hard: [
+      s("क्या लेंगे?", "Kya lenge?", "What will you have?", "एक फ़िल्टर कॉफ़ी देना", "Ek filter coffee dena", "Give me one filter coffee"),
+      s("गरम या ठंडी?", "Garam ya thandi?", "Hot or cold?", "गरम कॉफ़ी", "Garam coffee", "Hot coffee"),
+      s("चीनी कितनी?", "Cheeni kitni?", "How much sugar?", "थोड़ी कम चीनी", "Thodi kam cheeni", "A little less sugar"),
+      s("और कुछ चाहिए?", "Aur kuch chahiye?", "Anything else?", "नहीं, बस कॉफ़ी", "Nahin, bas coffee", "No, just coffee"),
+      s("तीस रुपये", "Tees rupaye", "Thirty rupees", "ये लीजिए", "Ye lijiye", "Here you go"),
+      s("खुल्ले पैसे हैं?", "Khulle paise hain?", "Do you have change?", "हाँ, ये रहे", "Haan, ye rahe", "Yes, here it is"),
+      s("ये रही कॉफ़ी", "Ye rahi coffee", "Here is the coffee", "धन्यवाद", "Dhanyavaad", "Thank you"),
+    ],
+  },
 };

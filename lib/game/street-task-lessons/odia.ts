@@ -94,4 +94,27 @@ export const LESSONS: Record<string, StreetTaskLessons> = {
       s("ନିଅ, ଟିକେଟ", "Nian, ticket", "Here, your ticket", "ଧନ୍ୟବାଦ", "Dhanyabaad", "Thank you"),
     ],
   },
+  "lingaraj-lane-coffee": {
+    easy: [
+      s("କଣ ନେବେ?", "Kana nebe?", "What will you have?", "ଗୋଟିଏ ଫିଲ୍ଟର କଫି ଦିଅନ୍ତୁ", "Gotie filter coffee diantu", "Give me one filter coffee"),
+      s("ତିରିଶ ଟଙ୍କା", "Tirish tanka", "Thirty rupees", "ଏଇ ନିଅନ୍ତୁ", "Ei niantu", "Here you go"),
+      s("ଏଇ ନିଅନ୍ତୁ କଫି", "Ei niantu coffee", "Here is the coffee", "ଧନ୍ୟବାଦ", "Dhanyabad", "Thank you"),
+    ],
+    medium: [
+      s("କଣ ନେବେ?", "Kana nebe?", "What will you have?", "ଗୋଟିଏ ଫିଲ୍ଟର କଫି ଦିଅନ୍ତୁ", "Gotie filter coffee diantu", "Give me one filter coffee"),
+      s("ଗରମ ନା ଥଣ୍ଡା?", "Garam na thanda?", "Hot or cold?", "ଗରମ କଫି", "Garam coffee", "Hot coffee"),
+      s("ଚିନି କେତେ?", "Chini kete?", "How much sugar?", "ଟିକିଏ କମ୍", "Tikie kam", "A little less sugar"),
+      s("ତିରିଶ ଟଙ୍କା", "Tirish tanka", "Thirty rupees", "ଏଇ ନିଅନ୍ତୁ", "Ei niantu", "Here you go"),
+      s("ଏଇ ନିଅନ୍ତୁ କଫି", "Ei niantu coffee", "Here is the coffee", "ଧନ୍ୟବାଦ", "Dhanyabad", "Thank you"),
+    ],
+    hard: [
+      s("କଣ ନେବେ?", "Kana nebe?", "What will you have?", "ଗୋଟିଏ ଫିଲ୍ଟର କଫି ଦିଅନ୍ତୁ", "Gotie filter coffee diantu", "Give me one filter coffee"),
+      s("ଗରମ ନା ଥଣ୍ଡା?", "Garam na thanda?", "Hot or cold?", "ଗରମ କଫି", "Garam coffee", "Hot coffee"),
+      s("ଚିନି କେତେ?", "Chini kete?", "How much sugar?", "ଟିକିଏ କମ୍", "Tikie kam", "A little less sugar"),
+      s("ଆଉ କିଛି ଦରକାର କି?", "Au kichi darakar ki?", "Anything else?", "ନା, ଖାଲି କଫି", "Na, khali coffee", "No, just coffee"),
+      s("ତିରିଶ ଟଙ୍କା", "Tirish tanka", "Thirty rupees", "ଏଇ ନିଅନ୍ତୁ", "Ei niantu", "Here you go"),
+      s("ଖୁଚୁରା ଅଛି କି?", "Khuchura achi ki?", "Do you have change?", "ହଁ, ଏଇ ଯେ", "Han, ei je", "Yes, here it is"),
+      s("ଏଇ ନିଅନ୍ତୁ କଫି", "Ei niantu coffee", "Here is the coffee", "ଧନ୍ୟବାଦ", "Dhanyabad", "Thank you"),
+    ],
+  },
 };

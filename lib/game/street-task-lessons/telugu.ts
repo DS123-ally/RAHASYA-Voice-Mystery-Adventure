@@ -94,4 +94,27 @@ export const LESSONS: Record<string, StreetTaskLessons> = {
       s("ఇదigo, ticket", "Idigo, ticket", "Here, your ticket", "ధన్యవాదాలు", "Dhanyavaadalu", "Thank you"),
     ],
   },
+  "charminar-lane-coffee": {
+    easy: [
+      s("ఏమి కావాలి?", "Emi kaavali?", "What will you have?", "ఒక ఫిల్టర్ కాఫీ ఇవ్వండి", "Oka filter coffee ivvandi", "Give me one filter coffee"),
+      s("ముప్పై రూపాయలు", "Muppai roopayalu", "Thirty rupees", "ఇదిగోండి", "Idigondi", "Here you go"),
+      s("ఇదిగో కాఫీ", "Idigo coffee", "Here is the coffee", "ధన్యవాదాలు", "Dhanyavaadaalu", "Thank you"),
+    ],
+    medium: [
+      s("ఏమి కావాలి?", "Emi kaavali?", "What will you have?", "ఒక ఫిల్టర్ కాఫీ ఇవ్వండి", "Oka filter coffee ivvandi", "Give me one filter coffee"),
+      s("వేడి లేదా చల్లటిదా?", "Vedi leda challatida?", "Hot or cold?", "వేడి కాఫీ", "Vedi coffee", "Hot coffee"),
+      s("చక్కెర ఎంత?", "Chakkera enta?", "How much sugar?", "కొంచెం తక్కువ", "Konchem takkuva", "A little less sugar"),
+      s("ముప్పై రూపాయలు", "Muppai roopayalu", "Thirty rupees", "ఇదిగోండి", "Idigondi", "Here you go"),
+      s("ఇదిగో కాఫీ", "Idigo coffee", "Here is the coffee", "ధన్యవాదాలు", "Dhanyavaadaalu", "Thank you"),
+    ],
+    hard: [
+      s("ఏమి కావాలి?", "Emi kaavali?", "What will you have?", "ఒక ఫిల్టర్ కాఫీ ఇవ్వండి", "Oka filter coffee ivvandi", "Give me one filter coffee"),
+      s("వేడి లేదా చల్లటిదా?", "Vedi leda challatida?", "Hot or cold?", "వేడి కాఫీ", "Vedi coffee", "Hot coffee"),
+      s("చక్కెర ఎంత?", "Chakkera enta?", "How much sugar?", "కొంచెం తక్కువ", "Konchem takkuva", "A little less sugar"),
+      s("ఇంకేమైనా కావాలా?", "Inkemainaa kaavaalaa?", "Anything else?", "వద్దు, కాఫీ చాలు", "Vaddu, coffee chaalu", "No, just coffee"),
+      s("ముప్పై రూపాయలు", "Muppai roopayalu", "Thirty rupees", "ఇదిగోండి", "Idigondi", "Here you go"),
+      s("చిల్లర ఉందా?", "Chillara undaa?", "Do you have change?", "అవును, ఇదిగో", "Avunu, idigo", "Yes, here it is"),
+      s("ఇదిగో కాఫీ", "Idigo coffee", "Here is the coffee", "ధన్యవాదాలు", "Dhanyavaadaalu", "Thank you"),
+    ],
+  },
 };
