@@ -256,6 +256,11 @@ const FALLBACK_BY_KIND: Record<TaskKind, Pick<Souvenir, "icon" | "name" | "descr
     name: "City Ticket",
     description: "A ticket earned by navigating local transit.",
   },
+  guide: {
+    icon: "🗣️",
+    name: "Local Chat",
+    description: "A conversation with a friendly local guide.",
+  }
 };
 
 export const ALL_SOUVENIRS: Souvenir[] = Object.entries(SOUVENIR_OVERRIDES).map(
