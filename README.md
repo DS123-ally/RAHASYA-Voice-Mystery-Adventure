@@ -2,6 +2,32 @@
 
 **Rahasya** is an interactive, browser-based 3D street simulation and language-learning game **built on the AO workspace**. Powered by the **Agent Orchestrator (AO) agent** and the **Sarvam AI** model suite, the game drops players into vibrant Indian street districts where they navigate procedurally generated 3D environments, converse with intelligent NPCs in regional Indian languages, and solve localized street mysteries — all through voice.
 
+
+# Video:
+
+
+https://github.com/user-attachments/assets/0e5a48d2-6f7c-42d4-b971-9eb841c52388
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Voice Pipeline
 
 The real-time voice loop runs through Sarvam AI's full stack:
